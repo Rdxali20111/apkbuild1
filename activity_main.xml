@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#0B0F19">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <!-- TAB 1: STORE WEBVIEW -->
+        <WebView
+            android:id="@+id/storeWebView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <!-- TAB 2: CRYPTO LIVE CHART -->
+        <WebView
+            android:id="@+id/cryptoWebView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+        <!-- TAB 3: 2FA OTP TOOL -->
+        <LinearLayout
+            android:id="@+id/layout2fa"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2FA OTP Generator"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp" />
+
+            <EditText
+                android:id="@+id/etSecretKey"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Paste 2FA Secret Key (Base32)"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#94A3B8"
+                android:background="#131A2A"
+                android:padding="14dp"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:id="@+id/tvOtpCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="------"
+                android:textColor="#10B981"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:background="#131A2A"
+                android:padding="24dp"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/tvTimer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Expires in: --s"
+                android:textColor="#94A3B8"
+                android:gravity="center"
+                android:layout_marginBottom="16dp" />
+
+            <Button
+                android:id="@+id/btnCopyOtp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Copy OTP Code"
+                android:backgroundTint="#10B981"
+                android:textColor="#052E16" />
+        </LinearLayout>
+
+        <!-- TAB 4: SUPPORT & COMPLAINT -->
+        <ScrollView
+            android:id="@+id/layoutSupport"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="20dp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Customer Support"
+                    android:textColor="#FFFFFF"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Koi bhi masla ho ya deposit/order issue ho to neeche detail likh kar screenshot attach karein."
+                    android:textColor="#94A3B8"
+                    android:layout_marginBottom="16dp" />
+
+                <EditText
+                    android:id="@+id/etSupSubject"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Subject (e.g. Deposit Issue / Order #123)"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#94A3B8"
+                    android:background="#131A2A"
+                    android:padding="14dp"
+                    android:layout_marginBottom="12dp" />
+
+                <EditText
+                    android:id="@+id/etSupMessage"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:hint="Apni complaint detail me likhein..."
+                    android:gravity="top"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#94A3B8"
+                    android:background="#131A2A"
+                    android:padding="14dp"
+                    android:layout_marginBottom="12dp" />
+
+                <Button
+                    android:id="@+id/btnAttachSS"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Attach Screenshot (Optional)"
+                    android:backgroundTint="#1E293B"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/tvAttachedFile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No screenshot selected"
+                    android:textColor="#94A3B8"
+                    android:layout_marginBottom="16dp" />
+
+                <Button
+                    android:id="@+id/btnSendSupport"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Send Complaint via Email"
+                    android:backgroundTint="#3B82F6"
+                    android:textColor="#FFFFFF" />
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#131A2A"
+        app:itemIconTint="#F1F5F9"
+        app:itemTextColor="#F1F5F9"
+        app:menu="@menu/bottom_nav_menu" />
+
+</LinearLayout>

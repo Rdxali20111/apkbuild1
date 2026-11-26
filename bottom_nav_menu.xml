@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_store"
+        android:icon="@android:drawable/ic_menu_compass"
+        android:title="Store" />
+    <item
+        android:id="@+id/nav_crypto"
+        android:icon="@android:drawable/ic_menu_sort_by_size"
+        android:title="Crypto" />
+    <item
+        android:id="@+id/nav_2fa"
+        android:icon="@android:drawable/ic_lock_idle_lock"
+        android:title="2FA Tool" />
+    <item
+        android:id="@+id/nav_support"
+        android:icon="@android:drawable/ic_dialog_email"
+        android:title="Support" />
+</menu>
